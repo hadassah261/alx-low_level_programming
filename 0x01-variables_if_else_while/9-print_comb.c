@@ -1,19 +1,25 @@
 #include <stdio.h>
 /**
- * main - A code that prints all the numbers of base 16 in lowercase using only the putchar() function
+ * main - A code that prints all possible combinations of single-digit numbers using only the putchar() function
  * Return: 0
  */
 int main(void)
 {
-	char c = '0';
-    while (c <= '9') {
-        putchar(c);
-        c++;
-    }
-    c = 'a';
-    while (c <= 'f') {
-        putchar(c);
-        c++;
+	int i, j, k;
+    for (i = 0; i < 10; i++) {
+        for (j = i + 1; j < 10; j++) {
+            for (k = j + 1; k < 10; k++) {
+                putchar(i + '0');
+                putchar(',');
+                putchar(' ');
+                putchar(j + '0');
+                putchar(',');
+                putchar(' ');
+                putchar(k + '0');
+                putchar(',');
+                putchar(' ');
+            }
+        }
     }
     putchar('\n');
     return 0;
